@@ -350,3 +350,32 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+
+// ===== Services Carousel (added by Julius)
+document.addEventListener('DOMContentLoaded', function () {
+  var track = document.getElementById('servicesTrack');
+  var btnPrev = document.getElementById('btnPrev');
+  var btnNext = document.getElementById('btnNext');
+  if (!track || !btnPrev || !btnNext) { return; }
+  function getStep() { return Math.max(240, Math.floor(track.clientWidth * 0.9)); }
+  function updateButtons() {
+    var tol = 4;
+    btnPrev.disabled = track.scrollLeft <= tol;
+    btnNext.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - tol;
+  }
+  function scrollByStep(dir) {
+    track.scrollBy({ left: dir * getStep(), behavior: 'smooth' });
+    setTimeout(updateButtons, 200);
+  }
+  btnPrev.addEventListener('click', function () { scrollByStep(-1); });
+  btnNext.addEventListener('click', function () { scrollByStep(1); });
+  track.addEventListener('scroll', updateButtons, { passive: true });
+  window.addEventListener('resize', updateButtons);
+  track.setAttribute('tabindex', '0');
+  track.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); scrollByStep(-1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); scrollByStep(1); }
+  });
+  updateButtons();
+});
+// ===== End Services Carousel =====
