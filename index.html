@@ -17,6 +17,7 @@
             <ul class="nav-menu">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="contrataciones.html">CONTRATACIONES</a></li>
+                <li><a href="galeria.html" class="active">GALERÍA</a></li>
                 <li><a href="about.html">ABOUT</a></li>
             </ul>
             <div class="hamburger">
@@ -29,8 +30,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <img src="./img/logo 1.png" alt="">
-            <p>STEREOTYPOS L.A., fundada en octubre de 2021 en Los Ángeles por el músico mendocino Gonzalo Baumgartner,
+            <img src="./img/G.png" alt="">
+            <p>STEREOTYPOS L.A. fundada en octubre de 2021 en Los Ángeles por el músico mendocino Gonzalo Baumgartner,
                 es una experiencia en vivo que rinde homenaje de forma auténtica y poderosa al legado de Soda Stereo y
                 Gustavo Cerati, llevando su música a nuevas audiencias con pasión y conexión emocional.</p>
         </div>
@@ -40,44 +41,108 @@
     <section class="services">
         <div class="container">
             <h2 class="section-title">SERVICIOS</h2>
-            <div class="carousel">
-                <div class="services-track" id="servicesTrack" aria-label="Carrusel de servicios">
-                    <div class="service-card">
-                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Espectáculo tributo en vivo">
-                        <button class="service-btn">TRIBUTE BAND</button>
-                        <p style="color: #ccc; margin-top: 1rem;">Espectáculos tributo completos</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Espectáculo tributo en vivo">
+                    <button class="service-btn">TRIBUTE BAND</button>
+                    <p>Espectáculos tributo completos</p>
+                </div>
+                <div class="service-card">
+                    <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Evento privado y corporativo">
+                    <button class="service-btn">PRIVATE EVENTS</button>
+                    <p>Eventos privados y corporativos</p>
+                </div>
+                <div class="service-card">
+                    <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Formato acústico">
+                    <button class="service-btn">ACOUSTIC SET</button>
+                    <p>Formato acústico para ambientes íntimos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRÓXIMOS EVENTOS SECTION - Add this to your index.html -->
+
+    <section class="upcoming-events">
+        <div class="container">
+            <h2 class="section-title">PRÓXIMOS EVENTOS</h2>
+            <div class="events-grid">
+
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div style="position: relative;">
+                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Concierto en The Roxy"
+                            class="event-image">
+                        <div class="event-date-badge">
+                            15<br>ENE
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Evento privado y corporativo">
-                        <button class="service-btn">PRIVATE EVENTS</button>
-                        <p style="color: #ccc; margin-top: 1rem;">Eventos privados y corporativos</p>
-                    </div>
-                    <!-- Duplicar para añadir más cards -->
-                    <div class="service-card">
-                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Servicio adicional 1">
-                        <button class="service-btn">ACOUSTIC SET</button>
-                        <p style="color: #ccc; margin-top: 1rem;">Formato acústico para ambientes íntimos</p>
-                    </div>
-                    <div class="service-card">
-                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Servicio adicional 2">
-                        <button class="service-btn">DJ + LIVE</button>
-                        <p style="color: #ccc; margin-top: 1rem;">DJ con intervención de músicos en vivo</p>
-                    </div>
-                    <div class="service-card">
-                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Servicio adicional 1">
-                        <button class="service-btn">ACOUSTIC SET</button>
-                        <p style="color: #ccc; margin-top: 1rem;">Formato acústico para ambientes íntimos</p>
-                    </div>
-                    <div class="service-card">
-                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Servicio adicional 2">
-                        <button class="service-btn">DJ + LIVE</button>
-                        <p style="color: #ccc; margin-top: 1rem;">DJ con intervención de músicos en vivo</p>
+                    <div class="event-content">
+                        <h3 class="event-title">STEREOTYPOS EN THE ROXY</h3>
+                        <div class="event-details">
+                            <div class="event-detail">
+                                <div class="event-icon">🕐</div>
+                                <span>Viernes 15 de Enero, 2025 - 21:00 hrs</span>
+                            </div>
+                            <div class="event-detail">
+                                <div class="event-icon">📍</div>
+                                <span>9009 Sunset Blvd, West Hollywood, CA 90069</span>
+                            </div>
+                        </div>
+                        <button class="reserve-btn">Reservar Entradas</button>
                     </div>
                 </div>
-                <div class="carousel-nav" aria-hidden="false">
-                    <button class="carousel-btn" id="btnPrev" aria-label="Anterior" title="Anterior">‹</button>
-                    <button class="carousel-btn" id="btnNext" aria-label="Siguiente" title="Siguiente">›</button>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div style="position: relative;">
+                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Festival de Rock Latino"
+                            class="event-image">
+                        <div class="event-date-badge">
+                            28<br>ENE
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">FESTIVAL ROCK LATINO</h3>
+                        <div class="event-details">
+                            <div class="event-detail">
+                                <div class="event-icon">🕐</div>
+                                <span>Sábado 28 de Enero, 2025 - 19:30 hrs</span>
+                            </div>
+                            <div class="event-detail">
+                                <div class="event-icon">📍</div>
+                                <span>Hollywood Bowl, 2301 N Highland Ave, Los Angeles, CA</span>
+                            </div>
+                        </div>
+                        <button class="reserve-btn">Reservar Entradas</button>
+                    </div>
                 </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div style="position: relative;">
+                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Evento Privado Corporativo"
+                            class="event-image">
+                        <div class="event-date-badge">
+                            12<br>FEB
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">EVENTO CORPORATIVO PRIVADO</h3>
+                        <div class="event-details">
+                            <div class="event-detail">
+                                <div class="event-icon">🕐</div>
+                                <span>Miércoles 12 de Febrero, 2025 - 20:00 hrs</span>
+                            </div>
+                            <div class="event-detail">
+                                <div class="event-icon">📍</div>
+                                <span>Beverly Hills Hotel, 9641 Sunset Blvd, Beverly Hills, CA</span>
+                            </div>
+                        </div>
+                        <button class="reserve-btn">Reservar Entradas</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -115,6 +180,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- Footer -->
     <footer class="footer">
