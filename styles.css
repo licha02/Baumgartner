@@ -1351,3 +1351,142 @@ body {
         font-size: 1.5rem;
     }
 }
+
+/* Metallic Gold Color Variables and Effects - NO BLINKING VERSION */
+:root {
+    --metallic-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 25%, #FFD700 50%, #B8860B 75%, #FFD700 100%);
+    --metallic-gold-solid: #FFD700;
+    --metallic-gold-dark: #B8860B;
+    --metallic-gold-light: #FFEF94;
+    --metallic-gold-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    --metallic-gold-text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Metallic Gold Text Effect - NO BLINKING */
+.metallic-gold-text {
+    background: var(--metallic-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: var(--metallic-gold-text-shadow);
+    position: relative;
+}
+
+/* Metallic Gold Background Effect - NO MOVING SHINE */
+.metallic-gold-bg {
+    background: var(--metallic-gold);
+    box-shadow: var(--metallic-gold-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Metallic Gold Border Effect */
+.metallic-gold-border {
+    border: 2px solid var(--metallic-gold-solid);
+    box-shadow: 
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -1px 0 rgba(0,0,0,0.3),
+        0 0 10px rgba(255, 215, 0, 0.3);
+    position: relative;
+}
+
+.metallic-gold-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--metallic-gold);
+    z-index: -1;
+    border-radius: inherit;
+}
+
+/* Apply metallic gold to existing elements - NO BLINKING */
+.hero-content h1,
+.about-title,
+.gallery-title,
+.section-title,
+.bio-title,
+.member-name,
+.logo {
+    background: var(--metallic-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: var(--metallic-gold-text-shadow);
+    position: relative;
+}
+
+/* Metallic gold buttons - ONLY HOVER SHINE, NO CONSTANT ANIMATION */
+.filter-btn,
+.social-icon,
+.cta-button {
+    background: var(--metallic-gold);
+    border: 2px solid var(--metallic-gold-dark);
+    color: #1a1a1a;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    box-shadow: 
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -1px 0 rgba(0,0,0,0.2),
+        0 4px 8px rgba(0,0,0,0.3),
+        0 0 15px rgba(255, 215, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before,
+.social-icon::before,
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.filter-btn:hover::before,
+.social-icon:hover::before,
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Metallic gold accents */
+.image-caption,
+.member-instrument,
+.gallery-info h3 {
+    color: var(--metallic-gold-solid);
+    text-shadow: var(--metallic-gold-text-shadow);
+}
+
+/* Metallic gold icons and decorative elements */
+.gallery-icon,
+.social-link,
+.play-icon {
+    color: var(--metallic-gold-solid);
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+}
+
+/* Enhanced hover effects with metallic gold */
+.gallery-item:hover,
+.member-card:hover {
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+.video-play-btn {
+    background: var(--metallic-gold);
+    box-shadow: 
+        inset 0 2px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 0 rgba(0,0,0,0.2),
+        0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Navigation active state */
+.nav-menu a.active,
+.nav-menu a:hover {
+    color: var(--metallic-gold-solid);
+    text-shadow: var(--metallic-gold-text-shadow);
+}
