@@ -302,6 +302,10 @@ body {
     margin-top: 1rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Contact Form Section */
 .contact-form-section {
     padding: 4rem 0;
@@ -522,132 +526,104 @@ body {
 
 /* Biography Section */
 .biography-section {
-    padding: 4rem 0;
+    padding: 5rem 0;
     background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+}
+
+.biography-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #FFD700;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #FFD700;
+    margin: 1rem auto 0;
+    border-radius: 2px;
 }
 
 .bio-content {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #ccc;
     line-height: 1.8;
     font-size: 1.1rem;
+}
+
+.bio-content h3 {
+    color: #FFD700;
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.bio-content h4 {
+    color: #FFD700;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .bio-content p {
     margin-bottom: 1.5rem;
 }
 
-/* Timeline Section */
-.timeline-section {
-    padding: 4rem 0;
-    background: #1a1a1a;
+.bio-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
 }
 
-.timeline {
-    max-width: 800px;
-    margin: 0 auto;
+.bio-content ul li {
     position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
 }
 
-.timeline::before {
-    content: '';
+.bio-content ul li::before {
+    content: '•';
     position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #FFD700;
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-.timeline-item:nth-child(odd) .timeline-content {
-    margin-right: 50%;
-    padding-right: 2rem;
-    text-align: right;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    margin-left: 50%;
-    padding-left: 2rem;
-}
-
-.timeline-content {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    position: relative;
-}
-
-.timeline-year {
+    left: 0;
     color: #FFD700;
     font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-event {
-    color: #ccc;
-    line-height: 1.6;
-}
-
-.timeline-dot {
-    position: absolute;
-    left: 50%;
-    top: 1rem;
-    width: 12px;
-    height: 12px;
-    background: #FFD700;
-    border-radius: 50%;
-    transform: translateX(-50%);
-    border: 3px solid #000;
-}
-
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
 }
 
-.lightbox-content {
-    position: relative;
-    margin: 5% auto;
-    max-width: 90%;
-    max-height: 80%;
-}
-
-.lightbox-content img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
+.bio-content p,
+.bio-content li {
+    color: #ddd;
     transition: color 0.3s ease;
 }
 
-.close:hover {
+.bio-content p:hover,
+.bio-content li:hover {
     color: #FFD700;
 }
+
+/* Add subtle section divider lines */
+.bio-content hr {
+    border: none;
+    height: 2px;
+    background: rgba(255, 215, 0, 0.3);
+    margin: 2rem 0;
+    border-radius: 2px;
+}
+
 
 /* Footer */
 .footer {
@@ -1377,7 +1353,7 @@ body {
     --metallic-gold-dark: #B8860B;
     --metallic-gold-light: #FFEF94;
     --metallic-gold-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    --metallic-gold-text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(255, 215, 0, 0.3);
+    --metallic-gold-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 /* Metallic Gold Text Effect - NO BLINKING */
@@ -1401,9 +1377,9 @@ body {
 /* Metallic Gold Border Effect */
 .metallic-gold-border {
     border: 2px solid var(--metallic-gold-solid);
-    box-shadow: 
-        inset 0 1px 0 rgba(255,255,255,0.3),
-        inset 0 -1px 0 rgba(0,0,0,0.3),
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3),
         0 0 10px rgba(255, 215, 0, 0.3);
     position: relative;
 }
@@ -1443,11 +1419,11 @@ body {
     background: var(--metallic-gold);
     border: 2px solid var(--metallic-gold-dark);
     color: #1a1a1a;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    box-shadow: 
-        inset 0 1px 0 rgba(255,255,255,0.3),
-        inset 0 -1px 0 rgba(0,0,0,0.2),
-        0 4px 8px rgba(0,0,0,0.3),
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+        0 4px 8px rgba(0, 0, 0, 0.3),
         0 0 15px rgba(255, 215, 0, 0.4);
     position: relative;
     overflow: hidden;
@@ -1462,7 +1438,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     transition: left 0.5s;
 }
 
@@ -1496,9 +1472,9 @@ body {
 
 .video-play-btn {
     background: var(--metallic-gold);
-    box-shadow: 
-        inset 0 2px 0 rgba(255,255,255,0.3),
-        inset 0 -2px 0 rgba(0,0,0,0.2),
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.2),
         0 0 20px rgba(255, 215, 0, 0.5);
 }
 
@@ -1539,7 +1515,7 @@ body {
         letter-spacing: 1px;
         white-space: nowrap;
     }
-    
+
     .nav-container {
         padding: 0 1rem;
     }
@@ -1551,7 +1527,7 @@ body {
         letter-spacing: 0.5px;
         white-space: nowrap;
     }
-    
+
     .nav-container {
         padding: 0 0.5rem;
     }
@@ -1566,5 +1542,6 @@ body {
 }
 
 ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
+    list-style-type: none;
+    /* Elimina los puntos de la lista */
 }

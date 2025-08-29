@@ -10,16 +10,16 @@
 </head>
 
 <body>
-    
+
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
             <a href="index.html" class="logo">G ENTERTAINMENT</a>
             <ul class="nav-menu">
-                <li><a href="index.html"class="active">HOME</a></li>
+                <li><a href="index.html" class="active">HOME</a></li>
                 <li><a href="contrataciones.html">CONTRATACIONES</a></li>
-                <li><a href="galeria.html">GALERÍA</a></li>
-                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="stereotypos.html">STEREOTYPOS</a></li>
+                <li><a href="gnosis.html">GNOSIS</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -46,17 +46,17 @@
             <div class="services-grid">
                 <div class="service-card">
                     <img src="./img/stereotypos 1.png" alt="Espectáculo tributo en vivo">
-                    <button class="service-btn">BANDA TRIBUTO</button>
+                    <button class="service-btn" data-target="stereotypos">STEREOTYPOS</button>
                     <p>Experiencia Soda Stereo & Gustavo Cerati</p>
                 </div>
                 <div class="service-card">
                     <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Evento privado y corporativo">
-                    <button class="service-btn">GNOSIS</button>
+                    <button class="service-btn" data-target="gnosis">GNOSIS</button>
                     <p>Experiencia Gipsy Kings & Multi-Tributo</p>
                 </div>
                 <div class="service-card">
                     <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Formato acústico">
-                    <button class="service-btn">EVENTOS PRIVADOS</button>
+                    <button class="service-btn" data-target="eventospriv">EVENTOS PRIVADOS</button>
                     <p>Shows personalizados a pedido del cliente</p>
                 </div>
             </div>
@@ -201,6 +201,15 @@
     </div>
 
     <script src="main.js"></script>
+
+    <script>
+        document.querySelectorAll('.service-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                window.location.href = `contrataciones.html#${targetId}`;
+            });
+        });
+    </script>
 </body>
 
 </html>
