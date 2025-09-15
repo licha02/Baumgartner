@@ -140,11 +140,9 @@
                         <label for="event-type">Tipo de Evento</label>
                         <select id="event-type" name="event-type">
                             <option value="">Seleccionar...</option>
-                            <option value="tribute">Tribute Band</option>
-                            <option value="private">Evento Privado</option>
-                            <option value="festival">Festival/Concierto</option>
-                            <option value="corporate">Evento Corporativo</option>
-                            <option value="other">Otro</option>
+                            <option value="stereotypos">STEREOTYPOS</option>
+                            <option value="gnosis">GNOSIS</option>
+                            <option value="show">Show personalizado</option>
                         </select>
                     </div>
 
@@ -161,21 +159,23 @@
 
                     <button type="submit" class="submit-btn">ENVIAR SOLICITUD</button>
                 </form>
-
-                <div class="contact-info-content">
-                    <h3>INFORMACIÓN DE CONTACTO</h3>
-                    <p><strong>Email:</strong> <a href="mailto:stereotyposla@gmail.com">stereotyposla@gmail.com</a></p>
-                    <p><strong>Teléfono:</strong> <a href="tel:+18187145008">818-714-5008</a></p>
-                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/18187145008" target="_blank">818-714-5008</a>
-                    </p>
-                    <div class="contact-message">
-                        <p>Responderemos tu solicitud en un plazo máximo de 72 horas. Para consultas urgentes,
-                            contáctanos directamente por WhatsApp.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal de opciones -->
+    <div id="sendOptionsModal" class="modal">
+        <div class="modal-content">
+            <h3>¿Cómo quieres enviar tu solicitud?</h3>
+            <div class="modal-buttons">
+                <button id="sendWhatsApp" class="btn-whatsapp">WhatsApp</button>
+                <button id="sendEmail" class="btn-email">Email</button>
+                <button id="closeModal" class="btn-close">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">

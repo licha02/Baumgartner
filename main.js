@@ -520,3 +520,63 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(item);
     });
 });
+
+const form = document.getElementById('contactForm');
+const modal = document.getElementById('sendOptionsModal');
+const btnWhatsApp = document.getElementById('sendWhatsApp');
+const btnEmail = document.getElementById('sendEmail');
+const btnClose = document.getElementById('closeModal');
+
+let fullMessage = ""; // mensaje preparado
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const eventType = document.getElementById('event-type').value;
+  const eventDate = document.getElementById('event-date').value;
+  const message = document.getElementById('message').value.trim();
+
+  if (!name || !email || !message) {
+    alert('Por favor completa los campos obligatorios.');
+    return;
+  }
+
+  fullMessage = 
+`Nueva solicitud de cotización:
+-------------------------
+👤 Nombre: ${name}
+📧 Email: ${email}
+📞 Teléfono: ${phone || "No especificado"}
+🎉 Tipo de Evento: ${eventType || "No especificado"}
+📅 Fecha: ${eventDate || "No especificada"}
+📝 Mensaje: ${message}`;
+
+  modal.style.display = "flex"; // mostrar modal
+});
+
+// WhatsApp
+btnWhatsApp.addEventListener('click', () => {
+  const whatsappNumber = "18187145008";
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
+  window.open(url, '_blank');
+  modal.style.display = "none";
+  form.reset();
+});
+
+// Email
+btnEmail.addEventListener('click', () => {
+  const mailtoEmail = "stereotyposla@gmail.com";
+  const subject = encodeURIComponent("Solicitud de Cotización");
+  const body = encodeURIComponent(fullMessage);
+  window.location.href = `mailto:${mailtoEmail}?subject=${subject}&body=${body}`;
+  modal.style.display = "none";
+  form.reset();
+});
+
+// Cerrar modal
+btnClose.addEventListener('click', () => {
+  modal.style.display = "none";
+});
