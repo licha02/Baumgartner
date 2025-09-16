@@ -1,10 +1,10 @@
 // Mobile Navigation Toggle
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Open lightbox when clicking on gallery images
     document.querySelectorAll('.gallery-item img, .member-photo').forEach(img => {
-        img.addEventListener('click', function() {
+        img.addEventListener('click', function () {
             if (lightbox && lightboxImg) {
                 lightbox.style.display = 'block';
                 lightboxImg.src = this.src;
@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close lightbox
     if (closeBtn && lightbox) {
-        closeBtn.addEventListener('click', function() {
+        closeBtn.addEventListener('click', function () {
             lightbox.style.display = 'none';
             document.body.style.overflow = 'auto';
         });
 
         // Close lightbox when clicking outside the image
-        lightbox.addEventListener('click', function(e) {
+        lightbox.addEventListener('click', function (e) {
             if (e.target === lightbox) {
                 lightbox.style.display = 'none';
                 document.body.style.overflow = 'auto';
@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact Form Validation and Submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(contactForm);
             const data = {
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -229,7 +229,7 @@ Fecha del evento: ${data.eventDate || 'No especificada'}
 Mensaje:
 ${data.message}
         `);
-        
+
         window.location.href = `mailto:info@banda.com?subject=${subject}&body=${body}`;
         throw error;
     }
@@ -239,7 +239,7 @@ async function loadBandInfo() {
     try {
         const response = await fetch('/api/band-infos');
         const data = await response.json();
-        
+
         if (data.data && data.data.length > 0) {
             const bandInfo = data.data[0].attributes;
             updateBandInfo(bandInfo);
@@ -254,7 +254,7 @@ async function loadServices() {
     try {
         const response = await fetch('/api/services');
         const data = await response.json();
-        
+
         if (data.data && data.data.length > 0) {
             updateServices(data.data);
         }
@@ -268,7 +268,7 @@ async function loadSocialMedia() {
     try {
         const response = await fetch('/api/social-medias');
         const data = await response.json();
-        
+
         if (data.data && data.data.length > 0) {
             updateSocialMedia(data.data);
         }
@@ -282,11 +282,11 @@ async function loadSocialMedia() {
 function updateBandInfo(bandInfo) {
     const heroTitle = document.querySelector('.hero-content h1');
     const heroDescription = document.querySelector('.hero-content p');
-    
+
     if (heroTitle && bandInfo.name) {
         heroTitle.textContent = bandInfo.name;
     }
-    
+
     if (heroDescription && bandInfo.description) {
         heroDescription.textContent = bandInfo.description;
     }
@@ -295,9 +295,9 @@ function updateBandInfo(bandInfo) {
 function updateServices(services) {
     const servicesGrid = document.querySelector('.services-grid');
     if (!servicesGrid) return;
-    
+
     servicesGrid.innerHTML = '';
-    
+
     services.forEach(service => {
         const serviceCard = document.createElement('div');
         serviceCard.className = 'service-card';
@@ -312,9 +312,9 @@ function updateServices(services) {
 function updateSocialMedia(socialMedia) {
     const socialIcons = document.querySelector('.social-icons');
     if (!socialIcons) return;
-    
+
     socialIcons.innerHTML = '';
-    
+
     socialMedia.forEach(social => {
         const socialIcon = document.createElement('a');
         socialIcon.href = social.attributes.url;
@@ -353,13 +353,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Gallery functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Gallery filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
 
     filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
             // Add active class to clicked button
@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Video play functionality
     const videoItems = document.querySelectorAll('.video-item');
-    
+
     videoItems.forEach(item => {
         const playBtn = item.querySelector('.video-play-btn');
         const thumbnail = item.querySelector('.video-thumbnail');
@@ -395,19 +395,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const overlay = item.querySelector('.gallery-overlay');
 
         if (playBtn && video) {
-            playBtn.addEventListener('click', function(e) {
+            playBtn.addEventListener('click', function (e) {
                 e.stopPropagation();
-                
+
                 // Hide thumbnail and show video
                 thumbnail.style.display = 'none';
                 video.style.display = 'block';
                 overlay.style.opacity = '0';
-                
+
                 // Play video
                 video.play();
-                
+
                 // Add event listener for when video ends
-                video.addEventListener('ended', function() {
+                video.addEventListener('ended', function () {
                     // Show thumbnail again and hide video
                     thumbnail.style.display = 'block';
                     video.style.display = 'none';
@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             // Handle video click to pause/play
-            video.addEventListener('click', function(e) {
+            video.addEventListener('click', function (e) {
                 e.stopPropagation();
                 if (video.paused) {
                     video.play();
@@ -429,9 +429,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Gallery item click for lightbox (using existing lightbox functionality)
     const galleryImages = document.querySelectorAll('.gallery-image');
-    
+
     galleryImages.forEach(image => {
-        image.addEventListener('click', function(e) {
+        image.addEventListener('click', function (e) {
             // Only trigger lightbox for photo items, not video items
             const parentItem = this.closest('.gallery-item');
             if (!parentItem.classList.contains('video-item')) {
@@ -445,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function openLightbox(src, alt) {
         // Check if lightbox already exists
         let lightbox = document.querySelector('.lightbox');
-        
+
         if (!lightbox) {
             // Create lightbox if it doesn't exist
             lightbox = document.createElement('div');
@@ -475,14 +475,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Close lightbox functionality
         closeBtn.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', function(e) {
+        lightbox.addEventListener('click', function (e) {
             if (e.target === lightbox) {
                 closeLightbox();
             }
         });
 
         // Close with Escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeLightbox();
             }
@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
@@ -529,23 +529,23 @@ const btnClose = document.getElementById('closeModal');
 
 let fullMessage = ""; // mensaje preparado
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const eventType = document.getElementById('event-type').value;
-  const eventDate = document.getElementById('event-date').value;
-  const message = document.getElementById('message').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const eventType = document.getElementById('event-type').value;
+    const eventDate = document.getElementById('event-date').value;
+    const message = document.getElementById('message').value.trim();
 
-  if (!name || !email || !message) {
-    alert('Por favor completa los campos obligatorios.');
-    return;
-  }
+    if (!name || !email || !message) {
+        alert('Por favor completa los campos obligatorios.');
+        return;
+    }
 
-  fullMessage = 
-`Nueva solicitud de cotización:
+    fullMessage =
+        `Nueva solicitud de cotización:
 -------------------------
 👤 Nombre: ${name}
 📧 Email: ${email}
@@ -554,29 +554,29 @@ form.addEventListener('submit', function(e) {
 📅 Fecha: ${eventDate || "No especificada"}
 📝 Mensaje: ${message}`;
 
-  modal.style.display = "flex"; // mostrar modal
+    modal.style.display = "flex"; // mostrar modal
 });
 
 // WhatsApp
 btnWhatsApp.addEventListener('click', () => {
-  const whatsappNumber = "18187145008";
-  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
-  window.open(url, '_blank');
-  modal.style.display = "none";
-  form.reset();
+    const whatsappNumber = "18187145008";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
+    window.open(url, '_blank');
+    modal.style.display = "none";
+    form.reset();
 });
 
 // Email
 btnEmail.addEventListener('click', () => {
-  const mailtoEmail = "stereotyposla@gmail.com";
-  const subject = encodeURIComponent("Solicitud de Cotización");
-  const body = encodeURIComponent(fullMessage);
-  window.location.href = `mailto:${mailtoEmail}?subject=${subject}&body=${body}`;
-  modal.style.display = "none";
-  form.reset();
+    const mailtoEmail = "stereotyposla@gmail.com";
+    const subject = encodeURIComponent("Solicitud de Cotización");
+    const body = encodeURIComponent(fullMessage);
+    window.location.href = `mailto:${mailtoEmail}?subject=${subject}&body=${body}`;
+    modal.style.display = "none";
+    form.reset();
 });
 
 // Cerrar modal
 btnClose.addEventListener('click', () => {
-  modal.style.display = "none";
+    modal.style.display = "none";
 });

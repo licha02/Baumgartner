@@ -15,9 +15,9 @@
             <a href="index.html" class="logo">G ENTERTAINMENT</a>
             <ul class="nav-menu">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="contrataciones.html">CONTRATACIONES</a></li>
                 <li><a href="stereotypos.html" class="active">STEREOTYPOS</a></li>
                 <li><a href="gnosis.html">GNOSIS</a></li>
+                <li><a href="personalizados.html">SHOWS PERSONALIZADOS</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -136,6 +136,101 @@
         </div>
     </section>
 
+    <!-- Services Detailed Section -->
+    <section class="services-detailed-section">
+        <div class="container">
+            <h2 class="section-title">CONTRATANOS</h2>
+            <div class="services-detailed">
+                <div class="service-detail">
+                    <h3 id="stereotypos">STEREOTYPOS</h3>
+                    <div class="service-description">
+                        <p>Es una banda establecida en el ambiente cultural y musical de Los Ángeles, California. Desde
+                            hace más de 4 años llevamos con orgullo la música de Soda Stereo y Gustavo Cerati a los
+                            escenarios más importantes del circuito de rock en español en Estados Unidos y
+                            Latinoamérica.</p>
+                        <br>
+                        <h4>¿Que ofrecemos?</h4>
+                        <ul>
+                            <li> Una experiencia única y legítima del sonido, la energía y la puesta en escena de Soda
+                                Stereo.</li>
+                            <li>Un recorrido completo por su historia y sus éxitos más emblemáticos de todos los
+                                tiempos.</li>
+                            <li>Cobertura para todo tipo de eventos: conciertos, festivales, shows privados y
+                                corporativos, dentro y fuera de Estados Unidos.</li>
+                        </ul>
+                        <h4>Formatos disponibles</h4>
+                        <ul>
+                            <li>Banda completa de 5 músicos.</li>
+                            <li>Formato acústico adaptable de 1 a 5 músicos.</li>
+                            <li>Para eventos privados ofrecemos equipo de sonido profesional, iluminación, máquina de
+                                humo y todos los recursos necesarios para garantizar un show inolvidable.</li>
+                            <li>Duración flexible del show: de 1 a 3 horas (o más, según requerimiento).</li>
+                        </ul>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <h2 class="section-title">SOLICITAR COTIZACIÓN</h2>
+            <div class="contact-form-container">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-type">Tipo de Evento</label>
+                        <select id="event-type" name="event-type">
+                            <option value="">Seleccionar...</option>
+                            <option value="stereotypos">STEREOTYPOS</option>
+                            <option value="gnosis">GNOSIS</option>
+                            <option value="show">Show personalizado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-date">Fecha del Evento</label>
+                        <input type="date" id="event-date" name="event-date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje *</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Cuéntanos más detalles sobre tu evento..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ENVIAR SOLICITUD</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de opciones -->
+    <div id="sendOptionsModal" class="modal">
+        <div class="modal-content">
+            <h3>¿Cómo quieres enviar tu solicitud?</h3>
+            <div class="modal-buttons">
+                <button id="sendWhatsApp" class="btn-whatsapp">WhatsApp</button>
+                <button id="sendEmail" class="btn-email">Email</button>
+                <button id="closeModal" class="btn-close">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Gallery Hero Section -->
     <section class="gallery-hero">
@@ -161,331 +256,45 @@
         <div class="container">
             <div class="gallery-grid">
 
-                <!-- Photo Item -->
+                <!-- Photo Item 1-->
 
                 <div class="gallery-item" data-category="photos live">
                     <img src="./img/PHOTO-2025-08-06-11-11-20.jpg" alt="Momento emotivo" class="gallery-image">
                     <div class="gallery-overlay"></div>
                 </div>
 
-                <!-- Photo Item -->
+                <!-- Photo Item 2-->
 
                 <div class="gallery-item" data-category="photos live">
                     <img src="./img/PHOTO-2025-08-06-11-11-57.jpg" alt="Momento emotivo" class="gallery-image">
                     <div class="gallery-overlay"></div>
                 </div>
 
-                <!-- Photo Item -->
+                <!-- Photo Item 3-->
 
                 <div class="gallery-item" data-category="photos live">
                     <img src="./img/PHOTO-2025-08-06-11-12-16.jpg" alt="Momento emotivo" class="gallery-image">
                     <div class="gallery-overlay"></div>
                 </div>
 
-                <!-- Photo Item -->
+                <!-- Photo Item 4-->
 
                 <div class="gallery-item" data-category="photos live">
                     <img src="/img/PHOTO-2025-08-06-11-15-41.jpg" alt="Momento emotivo" class="gallery-image">
                     <div class="gallery-overlay"></div>
                 </div>
 
-                <!-- Photo Item -->
+                <!-- Photo Item 5-->
 
                 <div class="gallery-item" data-category="photos live">
                     <img src="/img/PHOTO-2025-08-06-11-19-41.jpg" alt="Momento emotivo" class="gallery-image">
                     <div class="gallery-overlay"></div>
                 </div>
 
-                <!-- Photo Item -->
+                <!-- Photo Item 6-->
 
                 <div class="gallery-item" data-category="photos live">
                     <img src="./img/PHOTO-2025-08-06-11-28-31.jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-06-11-33-18.jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-15(1).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-15(2).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-15(3).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-15.jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-16(1).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-16(2).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-16(3).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-16(4).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-16(5).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-16(6).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-16.jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-19(1).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-19(2).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-19(3).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-19(4).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-19(5).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-19(6).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-19(7).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-19(8).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-19.jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-20(1).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-20(2).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-20(3).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-20(4).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-20(5).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-20(6).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-15-50-20.jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-16-10-26.jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-16-10-27(1).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-16-10-27(2).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-16-10-27(3).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-16-10-27(6).jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Photo Item -->
-
-                <div class="gallery-item" data-category="photos live">
-                    <img src="./img/PHOTO-2025-08-25-16-10-27.jpg" alt="Momento emotivo" class="gallery-image">
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Video Item -->
-                <div class="gallery-item video-item" data-category="videos live">
-                    <div class="video-thumbnail">
-                        <img src="./img/PHOTO-2025-08-25-16-10-27(4).jpg" alt="Video thumbnail" class="gallery-image">
-                        <div class="video-play-btn">▶</div>
-                    </div>
-                    <video class="gallery-video" style="display: none;" controls>
-                        <source src="./img/VIDEO-2025-08-25-16-10-27(1).mp4" type="video/mp4">
-                    </video>
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Video Item -->
-                <div class="gallery-item video-item" data-category="videos live">
-                    <div class="video-thumbnail">
-                        <img src="./img/PHOTO-2025-08-25-16-10-27(7).jpg" alt="Video thumbnail" class="gallery-image">
-                        <div class="video-play-btn">▶</div>
-                    </div>
-                    <video class="gallery-video" style="display: none;" controls>
-                        <source src="./img/VIDEO-2025-08-25-16-10-27(2).mp4" type="video/mp4">
-                    </video>
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Video Item -->
-                <div class="gallery-item video-item" data-category="videos live">
-                    <div class="video-thumbnail">
-                        <img src="./img/PHOTO-2025-08-25-16-10-27(5).jpg" alt="Video thumbnail" class="gallery-image">
-                        <div class="video-play-btn">▶</div>
-                    </div>
-                    <video class="gallery-video" style="display: none;" controls>
-                        <source src="./img/VIDEO-2025-08-25-16-10-27.mp4" type="video/mp4">
-                    </video>
-                    <div class="gallery-overlay"></div>
-                </div>
-
-                <!-- Video Item -->
-                <div class="gallery-item video-item" data-category="videos live">
-                    <div class="video-thumbnail">
-                        <img src="./img/stereotypos.jpeg" alt="Video thumbnail" class="gallery-image">
-                        <div class="video-play-btn">▶</div>
-                    </div>
-                    <video class="gallery-video" style="display: none;" controls>
-                        <source src="./img/VIDEO-2025-08-25-16-24-16.mp4" type="video/mp4">
-                    </video>
                     <div class="gallery-overlay"></div>
                 </div>
 
@@ -531,7 +340,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Banda Portfolio. Todos los derechos reservados.</p>
+            <p>&copy; G ENTERTAINMENT. Todos los derechos reservados.</p>
         </div>
     </footer>
 
