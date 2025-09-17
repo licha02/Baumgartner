@@ -132,7 +132,7 @@ body {
 /* Fondos individuales */
 .hero-1 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-        url('./img/G-E-Hero.jpg');
+        url('./img/GE1.jpg');
 }
 
 .hero-2 {
@@ -142,7 +142,7 @@ body {
 
 .hero-3 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-        url('./img/Hero1.jpg');
+        url('./img/Hero6.jpg');
 }
 
 /* Mobile responsive adjustments */
