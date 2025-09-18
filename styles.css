@@ -145,6 +145,11 @@ body {
         url('./img/Hero6.jpg');
 }
 
+.hero-4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+        url('./img/PHOTO-2025-08-25-16-10-26.jpg');
+}
+
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
     .hero {
@@ -249,23 +254,37 @@ body {
 
 
 .service-btn {
+    display: inline-block;
+    text-decoration: none;
+    /* quita subrayado */
     background: linear-gradient(45deg, #FFD700, #FFA500);
+    background-size: 200% 200%;
     color: #000;
-    padding: 1rem 2rem;
+    padding: 0.6rem 1.2rem;
+    /* más compacto */
     border: none;
-    border-radius: 25px;
-    font-size: 1.1rem;
+    border-radius: 20px;
+    /* un poco menos redondeado */
+    font-size: 1rem;
+    /* ligeramente más pequeño */
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 100%;
-    margin-bottom: 1rem;
+    width: auto;
+    /* que se ajuste al contenido */
+    margin-bottom: 0.8rem;
+    /* margen más pequeño */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Hover con efecto metálico / brillo */
 .service-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(45deg, #FFD700, #FFA500, #FFFACD);
+    background-size: 300% 300%;
 }
+
 
 /* Services Detailed Section */
 .services-detailed-section {
@@ -337,11 +356,11 @@ html {
 }
 
 .contact-form-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    /* centra horizontal */
+    padding: 0 20px;
+    /* margen interno para móviles */
 }
 
 .contact-form {
@@ -349,43 +368,80 @@ html {
     padding: 2.5rem;
     border-radius: 15px;
     border: 1px solid rgba(255, 215, 0, 0.2);
+    width: 100%;
+    /* ocupa todo el ancho disponible */
+    max-width: 600px;
+    /* ancho máximo en pantallas grandes */
+    box-sizing: border-box;
+    /* para que padding no rompa el ancho */
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+/* Opcional: ajustar padding en móviles para que quede más cómodo */
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
 }
 
+/* Importar Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+/* Labels dorados y con más espacio */
 .form-group label {
     display: block;
     color: #FFD700;
-    margin-bottom: 0.5rem;
+    /* dorado */
+    margin-bottom: 0.8rem;
+    /* más espacio debajo del label */
     font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* Inputs, textarea y select */
 .form-group input,
-.form-group select,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 100%;
-    padding: 0.8rem;
+    padding: 1rem 1.2rem;
+    /* más padding interno */
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    color: #000000;
     font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #FFD700;
+    /* dorado sólido */
     transition: all 0.3s ease;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+    /* espacio entre campos */
 }
 
+/* Placeholder dorado más suave */
+.form-group input::placeholder,
+.form-group textarea::placeholder,
+.form-group select::placeholder {
+    color: rgba(255, 215, 0, 0.6);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Focus para resaltar borde */
 .form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
     outline: none;
     border-color: #FFD700;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
+/* Opciones del select */
+.form-group select option {
+    color: #000;
+    /* negro para que se lea dentro del dropdown */
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
 }
 
 .submit-btn {
@@ -1051,24 +1107,27 @@ html {
 
 /* Gallery Hero Section */
 .gallery-hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    padding: 120px 0 80px;
+    background-color: #0f0f0f;
+    /* mismo color que el grid de la galería */
     text-align: center;
+    padding: 100px 20px;
+    /* ajusta altura */
     position: relative;
-    overflow: hidden;
 }
 
+/* línea dorada arriba */
 .gallery-hero::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg') center/cover;
-    opacity: 0.1;
-    z-index: 1;
+    width: 100%;
+    height: 4px;
+    /* grosor de la línea */
+    background-color: #d4af37;
+    /* dorado */
 }
+
 
 .gallery-hero .container {
     position: relative;
@@ -1094,9 +1153,8 @@ html {
 
 /* Gallery Filter */
 .gallery-filter {
-    background: #1a1a1a;
-    padding: 40px 0;
-    border-bottom: 2px solid #FFD700;
+    background: #0f0f0f;
+    padding: 10px 0;
 }
 
 .filter-buttons {
@@ -1131,7 +1189,7 @@ html {
 /* Gallery Section */
 .gallery-section {
     background: #0f0f0f;
-    padding: 80px 0;
+    padding: 20px 0;
     min-height: 100vh;
 }
 
@@ -1760,67 +1818,70 @@ ul {
 
 /* ===== GALERÍA ===== */
 .gal-section {
-  padding: 80px 0;
-  background: #0f0f0f;
+    padding: 80px 0;
+    background: #0f0f0f;
 }
 
 .gal-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #f0c14b; /* Dorado */
-  font-weight: 700;
-  letter-spacing: 2px;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f0c14b;
+    /* Dorado */
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
 .gal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 250px; /* base cuadrada */
-  gap: 15px;
-  grid-auto-flow: dense; /* rellena huecos */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    /* base cuadrada */
+    gap: 15px;
+    grid-auto-flow: dense;
+    /* rellena huecos */
 }
 
 .gal-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #1a1a1a;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #1a1a1a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gal-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 .gal-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
 .gal-item:hover img {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /* Variaciones para asimetría */
 .gal-wide {
-  grid-column: span 2;
+    grid-column: span 2;
 }
 
 .gal-tall {
-  grid-row: span 2;
+    grid-row: span 2;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .gal-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-auto-rows: 150px;
-  }
+    .gal-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-auto-rows: 150px;
+    }
 }
