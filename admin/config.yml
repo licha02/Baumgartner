@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: licha02/Baumgartner # reemplaza por tu usuario y repo
+  branch: main # o master según tu repo
+
+media_folder: "images"       # Carpeta donde se subirán las imágenes desde CMS
+public_folder: "/images"     # Ruta pública para mostrar imágenes en la web
+
+# Colecciones
+collections:
+  # Colección de eventos
+  - name: "events"
+    label: "Eventos"
+    folder: "data/cards"     # carpeta donde se guardan los JSON
+    create: true
+    slug: "{{slug}}"
+    format: json
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Fecha", name: "date", widget: "string"}
+      - {label: "Lugar", name: "location", widget: "string"}
+      - {label: "Imagen", name: "image", widget: "image"}
+      - {label: "Día del badge", name: "badgeDay", widget: "string"}
+      - {label: "Mes del badge", name: "badgeMonth", widget: "string"}
+
+  # Ejemplo de otra colección para otras cards si querés
+  - name: "cards"
+    label: "Cards genéricas"
+    folder: "data/cards-gen"
+    create: true
+    slug: "{{slug}}"
+    format: json
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Descripción", name: "description", widget: "text"}
+      - {label: "Imagen", name: "image", widget: "image"}
+      - {label: "Link", name: "link", widget: "string"}

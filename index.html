@@ -109,89 +109,50 @@
         </div>
     </section>
 
-
-    <!-- PRÓXIMOS EVENTOS SECTION -->
+    <!-- SECCION PROXIMOS EVENTOS -->
 
     <section class="upcoming-events">
         <div class="container">
             <h2 class="section-title">PRÓXIMOS EVENTOS</h2>
-            <div class="events-grid">
-
-                <!-- Event Card 1 -->
-                <div class="event-card">
-                    <div style="position: relative;">
-                        <img src="./img/GE1.jpg" alt="Concierto en The Roxy"
-                            class="event-image">
-                        <div class="event-date-badge">
-                            4<br>SEP
-                        </div>
-                    </div>
-                    <div class="event-content">
-                        <h3 class="event-title">STEREOTYPOS EN THE HIDEAWAY</h3>
-                        <div class="event-details">
-                            <div class="event-detail">
-                                <div class="event-icon">🕐</div>
-                                <span>4 de septiembre, 2025 - 9PM.</span>
-                            </div>
-                            <div class="event-detail">
-                                <div class="event-icon">📍</div>
-                                <span>The Hideaway, Riverside CA.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event Card 2 -->
-                <div class="event-card">
-                    <div style="position: relative;">
-                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Festival de Rock Latino"
-                            class="event-image">
-                        <div class="event-date-badge">
-                            5<br>SEP
-                        </div>
-                    </div>
-                    <div class="event-content">
-                        <h3 class="event-title">STEREOTYPOS EN ROCK AND WINGS</h3>
-                        <div class="event-details">
-                            <div class="event-detail">
-                                <div class="event-icon">🕐</div>
-                                <span>5 de septiembre, 2025 - 9PM.</span>
-                            </div>
-                            <div class="event-detail">
-                                <div class="event-icon">📍</div>
-                                <span>Rock and Wings, Bakersfield CA.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event Card 3 -->
-                <div class="event-card">
-                    <div style="position: relative;">
-                        <img src="./img/WhatsApp Image 2025-08-06 at 11.11.20.jpeg" alt="Evento Privado Corporativo"
-                            class="event-image">
-                        <div class="event-date-badge">
-                            12<br>FEB
-                        </div>
-                    </div>
-                    <div class="event-content">
-                        <h3 class="event-title">STEREOTYPOS EN THE PARAMOUNT LA</h3>
-                        <div class="event-details">
-                            <div class="event-detail">
-                                <div class="event-icon">🕐</div>
-                                <span>6 de septiembre, 2025 - 9PM.</span>
-                            </div>
-                            <div class="event-detail">
-                                <div class="event-icon">📍</div>
-                                <span>The Paramount LA, Los Ángeles CA.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="events-grid" id="events-container">
+                <!-- Las cards se generan aquí con JS -->
             </div>
         </div>
     </section>
+
+    <script>
+        fetch('/data/cards/events.json')
+            .then(res => res.json())
+            .then(events => {
+                const container = document.getElementById('events-container');
+                events.forEach(event => {
+                    container.innerHTML += `
+        <div class="event-card">
+          <div style="position: relative;">
+            <img src="${event.image}" alt="${event.title}" class="event-image">
+            <div class="event-date-badge">
+              ${event.badgeDay}<br>${event.badgeMonth}
+            </div>
+          </div>
+          <div class="event-content">
+            <h3 class="event-title">${event.title}</h3>
+            <div class="event-details">
+              <div class="event-detail">
+                <div class="event-icon">🕐</div>
+                <span>${event.date}</span>
+              </div>
+              <div class="event-detail">
+                <div class="event-icon">📍</div>
+                <span>${event.location}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+                });
+            });
+    </script>
+
 
     <!-- Footer -->
     <footer class="footer">
