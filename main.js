@@ -580,3 +580,5 @@ btnEmail.addEventListener('click', () => {
 btnClose.addEventListener('click', () => {
     modal.style.display = "none";
 });
+
+

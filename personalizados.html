@@ -18,6 +18,11 @@
                 <li><a href="stereotypos.html">STEREOTYPOS</a></li>
                 <li><a href="gnosis.html">GNOSIS</a></li>
                 <li><a href="personalizados.html" class="active">EVENTOS PRIVADOS</a></li>
+                <li class="translate-buttons">
+                    <a href="#" onclick="doGTranslate('es|es')">🇪🇦</a>
+                    <a href="#" onclick="doGTranslate('es|en')">🇺🇸</a>
+                </li>
+
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -27,7 +32,7 @@
         </nav>
     </header>
 
-    <!-- Hero 3: GNOSIS -->
+    <!-- Hero 4: PRIVADOS -->
     <section class="hero hero-4">
         <div class="hero-content">
             <h1>EVENTOS PRIVADOS</h1>
@@ -42,25 +47,24 @@
     <!-- Biography Section -->
     <section class="biography-section">
         <div class="container">
-            <h2 class="section-title">BIOGRAFÍA</h2>
+            <h2 class="section-title">PROPUESTA</h2>
             <div class="bio-content">
-                <p>Nuestra propuesta de shows personalizados nace como respuesta a la necesidad de crear experiencias
-                    únicas y memorables en cada evento. Más que un espectáculo estándar, ofrecemos una alternativa
-                    innovadora que se adapta por completo a la visión y los deseos de cada cliente.</p>
+                <p>Una alternativa innovadora para quienes buscan un espectáculo único, diseñado específicamente
+                    según las necesidades de cada evento. No se trata de un show estándar: cada presentación es
+                    creada en conjunto con el cliente, cuidando cada detalle artístico y estético para lograr un
+                    resultado inolvidable. La esencia de nuestro trabajo está en la versatilidad. Ya sea un
+                    evento íntimo o un gran escenario, adaptamos el formato, la cantidad de artistas y el estilo
+                    musical o performático para que cada show sea realmente irrepetible.
+                </p>
 
                 <h3>Orígenes y visión</h3>
                 <p>La esencia de nuestro trabajo está en la versatilidad. Desde encuentros íntimos hasta grandes
                     producciones, diseñamos cada presentación a medida, ajustando formato, cantidad de artistas y estilo
                     musical o performático. Cada detalle se cuida con precisión artística y estética para lograr un
-                    resultado auténtico y emotivo.</p>
+                    resultado auténtico y emotivo.
+                </p>
 
                 <hr>
-
-                <h3>Shows destacados y expansión</h3>
-                <p>A lo largo de nuestras presentaciones hemos transformado eventos privados, corporativos y
-                    celebraciones especiales en experiencias irrepetibles. Con opciones acústicas, eléctricas o
-                    híbridas, fusionamos música, danza y performance para crear momentos llenos de energía, emoción y
-                    originalidad que trascienden el escenario y permanecen en la memoria de los asistentes.</p>
             </div>
         </div>
     </section>
@@ -74,13 +78,6 @@
                 <div class="service-detail">
                     <h3 id="eventospriv">EXPERIENCIA A MEDIDA - Shows Personalizados</h3>
                     <div class="service-description">
-                        <p>Una alternativa innovadora para quienes buscan un espectáculo único, diseñado específicamente
-                            según las necesidades de cada evento. No se trata de un show estándar: cada presentación es
-                            creada en conjunto con el cliente, cuidando cada detalle artístico y estético para lograr un
-                            resultado inolvidable. La esencia de nuestro trabajo está en la versatilidad. Ya sea un
-                            evento íntimo o un gran escenario, adaptamos el formato, la cantidad de artistas y el estilo
-                            musical o performático para que cada show sea realmente irrepetible.</p>
-                        <br>
                         <h4>¿Que ofrecemos?</h4>
                         <ul>
                             <li> Shows 100% personalizados según la visión del cliente.</li>
@@ -281,6 +278,33 @@
     </div>
 
     <script src="main.js"></script>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'es,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+    <!-- Función para activar traducción -->
+    <script type="text/javascript">
+        function doGTranslate(lang_pair) {
+            if (lang_pair.value) lang_pair = lang_pair.value;
+            var lang = lang_pair.split('|')[1];
+            var select = document.querySelector('select.goog-te-combo');
+            if (select && select.children.length > 0) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+
 </body>
 
 </html>

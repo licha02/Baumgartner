@@ -18,6 +18,11 @@
                 <li><a href="stereotypos.html">STEREOTYPOS</a></li>
                 <li><a href="gnosis.html" class="active">GNOSIS</a></li>
                 <li><a href="personalizados.html">EVENTOS PRIVADOS</a></li>
+                <li class="translate-buttons">
+                    <a href="#" onclick="doGTranslate('es|es')">🇪🇦</a>
+                    <a href="#" onclick="doGTranslate('es|en')">🇺🇸</a>
+                </li>
+                >
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -32,7 +37,7 @@
         <div class="hero-content">
             <h1>GNOSIS</h1>
             <p>
-                Desde 2025, ofrecemos un espectáculo multi-tributo que fusiona la pasión del flamenco,
+                Espectáculo multi-tributo que fusiona la pasión del flamenco,
                 la fuerza de las guitarras españolas y la alegría del repertorio gipsy, creando experiencias
                 únicas que emocionan y conectan con todo público.
             </p>
@@ -82,11 +87,6 @@
                 <div class="service-detail">
                     <h3 id="gnosis">GNOSIS</h3>
                     <div class="service-description">
-                        <p>GNOSIS ofrece un multi-tributo musical inspirado en el legado de los Gipsy Kings, fusionando
-                            guitarras españolas, voz flamenca y danza. Con un show versátil y auténtico, combina
-                            tradición y modernidad para crear experiencias únicas, llenas de pasión, energía y
-                            celebración.</p>
-                        <br>
                         <h4>¿Que ofrecemos?</h4>
                         <ul>
                             <li> Formato original: dos guitarras, voz y bailarina.</li>
@@ -161,8 +161,6 @@
             </div>
         </div>
     </div>
-
-
 
     <!-- Gallery Hero Section -->
     <section class="gallery-hero">
@@ -396,6 +394,32 @@
         </div>
     </div>
 
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'es,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+    <!-- Función para activar traducción -->
+    <script type="text/javascript">
+        function doGTranslate(lang_pair) {
+            if (lang_pair.value) lang_pair = lang_pair.value;
+            var lang = lang_pair.split('|')[1];
+            var select = document.querySelector('select.goog-te-combo');
+            if (select && select.children.length > 0) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+    
     <script src="main.js"></script>
 </body>
 

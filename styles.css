@@ -94,6 +94,28 @@ body {
     transition: 0.3s;
 }
 
+/* Google Translate dentro del navbar */
+#google_translate_element {
+    display: inline-block;
+}
+
+#google_translate_element select {
+    background: transparent;
+    border: 1px solid #FFD700;
+    color: #FFD700;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#google_translate_element select:hover {
+    background: #FFD700;
+    color: #000;
+}
+
+
 /* Estilo base */
 .hero {
     height: 100vh;
@@ -925,7 +947,7 @@ html {
 }
 
 .service-card-ig {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgb(255, 255, 255);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -1195,7 +1217,7 @@ html {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1.15rem));
     gap: 30px;
     margin-top: 40px;
 }
@@ -1208,12 +1230,6 @@ html {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: all 0.4s ease;
     cursor: pointer;
-    aspect-ratio: 4/3;
-}
-
-.gallery-item:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
 }
 
 .gallery-image {
