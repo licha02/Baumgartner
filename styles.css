@@ -94,28 +94,6 @@ body {
     transition: 0.3s;
 }
 
-/* Google Translate dentro del navbar */
-#google_translate_element {
-    display: inline-block;
-}
-
-#google_translate_element select {
-    background: transparent;
-    border: 1px solid #FFD700;
-    color: #FFD700;
-    font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#google_translate_element select:hover {
-    background: #FFD700;
-    color: #000;
-}
-
-
 /* Estilo base */
 .hero {
     height: 100vh;
@@ -137,12 +115,20 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: #FFD700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    letter-spacing: 3px;
+    padding-top: 16rem;
+    font-size: 4rem; /* ajustá según tu diseño */
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #FFD700 0%, #FFA500 50%, #FFF8DC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #FFD700; /* fallback sólido dorado */
+    text-shadow: 
+        1px 1px 2px rgba(0,0,0,0.2),   /* sutil sombra para legibilidad */
+        0 0 5px rgba(255,215,0,0.5),    /* brillo dorado leve */
+        0 0 10px rgba(255,223,0,0.3);  /* brillo más suave */
 }
+
 
 .hero-content p {
     font-size: 1.2rem;
@@ -566,67 +552,6 @@ html {
     border-color: #FFEF94;
 }
 
-/* Band Members Section */
-.band-members-section {
-    padding: 4rem 0;
-    background: #1a1a1a;
-}
-
-.members-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.member-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.member-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(255, 215, 0, 0.4);
-    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.1);
-}
-
-.member-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto 1rem;
-    background: #333;
-    border: 3px solid #FFD700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.member-photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-}
-
-.member-name {
-    color: #FFD700;
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.member-role {
-    color: #ccc;
-    margin-bottom: 1rem;
-}
-
-.member-bio {
-    color: #bbb;
-    line-height: 1.5;
-    font-size: 0.9rem;
-}
 
 /* Biography Section */
 .biography-section {
@@ -1113,20 +1038,6 @@ html {
     }
 }
 
-/* No events message (opcional para cuando no haya eventos) */
-.no-events {
-    text-align: center;
-    padding: 3rem;
-    color: #ccc;
-    font-size: 1.1rem;
-}
-
-.no-events-icon {
-    font-size: 3rem;
-    color: #FFD700;
-    margin-bottom: 1rem;
-}
-
 /* Gallery Hero Section */
 .gallery-hero {
     background-color: #0f0f0f;
@@ -1458,146 +1369,6 @@ html {
     }
 }
 
-/* Metallic Gold Color Variables and Effects - NO BLINKING VERSION */
-:root {
-    --metallic-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 25%, #FFD700 50%, #B8860B 75%, #FFD700 100%);
-    --metallic-gold-solid: #FFD700;
-    --metallic-gold-dark: #B8860B;
-    --metallic-gold-light: #FFEF94;
-    --metallic-gold-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    --metallic-gold-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
-}
-
-/* Metallic Gold Text Effect - NO BLINKING */
-.metallic-gold-text {
-    background: var(--metallic-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: var(--metallic-gold-text-shadow);
-    position: relative;
-}
-
-/* Metallic Gold Background Effect - NO MOVING SHINE */
-.metallic-gold-bg {
-    background: var(--metallic-gold);
-    box-shadow: var(--metallic-gold-shadow);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Metallic Gold Border Effect */
-.metallic-gold-border {
-    border: 2px solid var(--metallic-gold-solid);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.3),
-        0 0 10px rgba(255, 215, 0, 0.3);
-    position: relative;
-}
-
-.metallic-gold-border::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: var(--metallic-gold);
-    z-index: -1;
-    border-radius: inherit;
-}
-
-/* Apply metallic gold to existing elements - NO BLINKING */
-.hero-content h1,
-.about-title,
-.gallery-title,
-.section-title,
-.bio-title,
-.member-name,
-.logo {
-    background: var(--metallic-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: var(--metallic-gold-text-shadow);
-    position: relative;
-}
-
-/* Metallic gold buttons - ONLY HOVER SHINE, NO CONSTANT ANIMATION */
-.filter-btn,
-.social-icon,
-.cta-button {
-    background: var(--metallic-gold);
-    border: 2px solid var(--metallic-gold-dark);
-    color: #1a1a1a;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.2),
-        0 4px 8px rgba(0, 0, 0, 0.3),
-        0 0 15px rgba(255, 215, 0, 0.4);
-    position: relative;
-    overflow: hidden;
-}
-
-.filter-btn::before,
-.social-icon::before,
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.5s;
-}
-
-.filter-btn:hover::before,
-.social-icon:hover::before,
-.cta-button:hover::before {
-    left: 100%;
-}
-
-/* Metallic gold accents */
-.image-caption,
-.member-instrument,
-.gallery-info h3 {
-    color: var(--metallic-gold-solid);
-    text-shadow: var(--metallic-gold-text-shadow);
-}
-
-/* Metallic gold icons and decorative elements */
-.gallery-icon,
-.social-link,
-.play-icon {
-    color: var(--metallic-gold-solid);
-    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
-}
-
-/* Enhanced hover effects with metallic gold */
-.gallery-item:hover,
-.member-card:hover {
-    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
-}
-
-.video-play-btn {
-    background: var(--metallic-gold);
-    box-shadow:
-        inset 0 2px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -2px 0 rgba(0, 0, 0, 0.2),
-        0 0 20px rgba(255, 215, 0, 0.5);
-}
-
-/* Navigation active state */
-.nav-menu a.active,
-.nav-menu a:hover {
-    color: var(--metallic-gold-solid);
-    text-shadow: var(--metallic-gold-text-shadow);
-}
-
-
 /* Fix navbar title wrapping on small devices */
 @media (max-width: 768px) {
     .navbar-brand {
@@ -1759,79 +1530,6 @@ ul {
     border: none;
 }
 
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.65);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: var(--color-bg, #fff);
-    padding: 2rem;
-    border-radius: 12px;
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
-.modal-content h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-    color: var(--color-primary, #222);
-}
-
-.modal-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.modal-buttons button {
-    padding: 0.9rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background 0.3s ease;
-}
-
-.btn-whatsapp {
-    background: #25D366;
-    color: #fff;
-}
-
-.btn-whatsapp:hover {
-    background: #1ebe5c;
-}
-
-.btn-email {
-    background: #0072c6;
-    color: #fff;
-}
-
-.btn-email:hover {
-    background: #005c9c;
-}
-
-.btn-close {
-    background: #e0e0e0;
-    color: #333;
-}
-
-.btn-close:hover {
-    background: #c8c8c8;
-}
-
 /* ===== GALERÍA ===== */
 .gal-section {
     padding: 80px 0;
@@ -1842,20 +1540,17 @@ ul {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #f0c14b;
-    /* Dorado */
+    color: #f0c14b; /* Dorado */
     font-weight: 700;
     letter-spacing: 2px;
 }
 
 .gal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 250px;
-    /* base cuadrada */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px; /* filas más grandes */
     gap: 15px;
-    grid-auto-flow: dense;
-    /* rellena huecos */
+    grid-auto-flow: dense; /* rellena huecos */
 }
 
 .gal-item {
@@ -1876,13 +1571,15 @@ ul {
 .gal-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* muestra la imagen completa sin recortes */
+    object-position: center; /* centrada en el contenedor */
+    background: #1a1a1a; /* color de relleno para espacios */
     display: block;
     transition: transform 0.5s ease;
 }
 
 .gal-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05); /* pequeño zoom al pasar el mouse */
 }
 
 /* Variaciones para asimetría */
@@ -1895,9 +1592,51 @@ ul {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .gal-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-auto-rows: 250px;
+    }
+}
+
 @media (max-width: 768px) {
     .gal-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-auto-rows: 150px;
     }
+}
+
+
+/* Video Review Section */
+.video-section {
+    padding: 2rem;
+}
+
+.video-container {
+    max-width: 400px; /* ancho máximo del video vertical */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.video-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.video-wrapper {
+    width: 100%;
+    height: 0;
+    padding-bottom: 177.78%; /* Relación 9:16 (100 / 9 * 16) */
+    position: relative;
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ocupa todo el contenedor sin deformar */
+    border: none;
+    display: block;
 }

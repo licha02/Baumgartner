@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banda Portfolio - About Us</title>
+    <title>EVENTOS PRIVADOS</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -18,11 +19,6 @@
                 <li><a href="stereotypos.html">STEREOTYPOS</a></li>
                 <li><a href="gnosis.html">GNOSIS</a></li>
                 <li><a href="personalizados.html" class="active">EVENTOS PRIVADOS</a></li>
-                <li class="translate-buttons">
-                    <a href="#" onclick="doGTranslate('es|es')">🇪🇦</a>
-                    <a href="#" onclick="doGTranslate('es|en')">🇺🇸</a>
-                </li>
-
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -142,20 +138,6 @@
         </div>
     </section>
 
-    <!-- Modal de opciones -->
-    <div id="sendOptionsModal" class="modal">
-        <div class="modal-content">
-            <h3>¿Cómo quieres enviar tu solicitud?</h3>
-            <div class="modal-buttons">
-                <button id="sendWhatsApp" class="btn-whatsapp">WhatsApp</button>
-                <button id="sendEmail" class="btn-email">Email</button>
-                <button id="closeModal" class="btn-close">Cancelar</button>
-            </div>
-        </div>
-    </div>
-
-
-
     <!-- Gallery Hero Section -->
     <section class="gallery-hero">
         <div class="container">
@@ -269,41 +251,7 @@
         </div>
     </footer>
 
-    <!-- Lightbox -->
-    <div class="lightbox">
-        <span class="close">&times;</span>
-        <div class="lightbox-content">
-            <img src="" alt="">
-        </div>
-    </div>
-
     <script src="main.js"></script>
-
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'es',
-                includedLanguages: 'es,en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-    </script>
-
-    <!-- Función para activar traducción -->
-    <script type="text/javascript">
-        function doGTranslate(lang_pair) {
-            if (lang_pair.value) lang_pair = lang_pair.value;
-            var lang = lang_pair.split('|')[1];
-            var select = document.querySelector('select.goog-te-combo');
-            if (select && select.children.length > 0) {
-                select.value = lang;
-                select.dispatchEvent(new Event('change'));
-            }
-        }
-    </script>
 
 </body>
 

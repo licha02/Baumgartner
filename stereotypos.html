@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banda Portfolio - About Us</title>
+    <title>STEREOTYPOS</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -18,11 +19,6 @@
                 <li><a href="stereotypos.html" class="active">STEREOTYPOS</a></li>
                 <li><a href="gnosis.html">GNOSIS</a></li>
                 <li><a href="personalizados.html">EVENTOS PRIVADOS</a></li>
-                <li class="translate-buttons">
-                    <a href="#" onclick="doGTranslate('es|es')">🇪🇦</a>
-                    <a href="#" onclick="doGTranslate('es|en')">🇺🇸</a>
-                </li>
-
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -116,59 +112,11 @@
         <div class="video-container">
             <h2 class="video-title">Vive la Experiencia</h2>
             <div class="video-wrapper">
-                <!-- Inserta aquí el enlace de tu video (YouTube, Vimeo o MP4) -->
-                <iframe src="./img/WhatsApp Video 2025-09-05 at 13.52.56_1c38c959.mp4" title="Video G ENTERTAINMENT"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+                <video controls autoplay muted loop style="width:100%; height:100%; display:block;">
+                    <source src="./img/WhatsApp Video 2025-09-05 at 13.52.56_1c38c959.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
             </div>
-        </div>
-    </section>
-
-    <!-- ===== Sección: Instagram ===== -->
-    <section id="instagram" aria-labelledby="instagram-title" style="background:#1a1a1a; padding:4rem 0;">
-        <div class="container">
-            <h2 id="instagram-title" class="section-title">Instagram</h2>
-
-            <!-- Opcional: pequeño subtítulo informativo -->
-            <p style="text-align:center; color:#ccc; max-width:800px; margin:0 auto 2rem;">
-                Seguinos!
-            </p>
-
-            <!-- Grid reutiliza tu .services-grid para layout responsive -->
-            <div class="services-grid" role="list">
-
-                <!-- Card 1 -->
-                <article class="service-card-ig" role="listitem">
-                    <blockquote class="instagram-media"
-                        data-instgrm-permalink="https://www.instagram.com/reel/Cx1vEd7LNKk/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                        data-instgrm-version="14"
-                        style="background:transparent; border:0; margin:0 auto; max-width:540px; width:100%;">
-                    </blockquote>
-                </article>
-
-                <!-- Card 2 -->
-                <article class="service-card-ig" role="listitem">
-                    <blockquote class="instagram-media"
-                        data-instgrm-permalink="https://www.instagram.com/reel/C_W5F5JJQwf/?igsh=YzAyMDM1MGJkZA%3D%3D"
-                        data-instgrm-version="14"
-                        style="background:transparent; border:0; margin:0 auto; max-width:540px; width:100%;">
-                    </blockquote>
-                </article>
-
-            </div>
-
-            <!-- Carga el script de Instagram (una sola vez por página) -->
-            <script async src="https://www.instagram.com/embed.js"></script>
-
-            <!-- Fallback (opcional) para usuarios sin JS -->
-            <noscript>
-                <div style="text-align:center; margin-top:1rem; color:#ccc;">
-                    Ver publicaciones en
-                    <a href="https://www.instagram.com/" style="color:#FFD700; text-decoration:none;">Instagram</a>.
-                </div>
-            </noscript>
         </div>
     </section>
 
@@ -248,20 +196,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Modal de opciones -->
-    <div id="sendOptionsModal" class="modal">
-        <div class="modal-content">
-            <h3>¿Cómo quieres enviar tu solicitud?</h3>
-            <div class="modal-buttons">
-                <button id="sendWhatsApp" class="btn-whatsapp">WhatsApp</button>
-                <button id="sendEmail" class="btn-email">Email</button>
-                <button id="closeModal" class="btn-close">Cancelar</button>
-            </div>
-        </div>
-    </div>
-
-
 
     <!-- Gallery Hero Section -->
     <section class="gallery-hero">
@@ -372,39 +306,33 @@
         </div>
     </footer>
 
-    <!-- Lightbox -->
-    <div class="lightbox">
-        <span class="close">&times;</span>
-        <div class="lightbox-content">
-            <img src="" alt="">
-        </div>
-    </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Evita el envío normal del formulario
 
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'es',
-                includedLanguages: 'es,en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+            const name = encodeURIComponent(document.getElementById('name').value);
+            const email = encodeURIComponent(document.getElementById('email').value);
+            const phone = encodeURIComponent(document.getElementById('phone').value);
+            const eventType = encodeURIComponent(document.getElementById('event-type').value);
+            const eventDate = encodeURIComponent(document.getElementById('event-date').value);
+            const message = encodeURIComponent(document.getElementById('message').value);
+
+            // Número de WhatsApp de destino (cámbialo por el tuyo)
+            const whatsappNumber = '18187145008';
+
+            // Mensaje prellenado con formato ordenado
+            const whatsappMessage = `Hola! Quiero solicitar una cotización para: *${eventType}*\n\n` +
+                `*Nombre:* ${name}\n` +
+                `*Email:* ${email}\n` +
+                `*Teléfono:* ${phone}\n` +
+                `*Fecha del Evento:* ${eventDate}\n` +
+                `*Mensaje:* ${message}`;
+
+            // Abrir WhatsApp Web o App
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+        });
     </script>
 
-    <!-- Función para activar traducción -->
-    <script type="text/javascript">
-        function doGTranslate(lang_pair) {
-            if (lang_pair.value) lang_pair = lang_pair.value;
-            var lang = lang_pair.split('|')[1];
-            var select = document.querySelector('select.goog-te-combo');
-            if (select && select.children.length > 0) {
-                select.value = lang;
-                select.dispatchEvent(new Event('change'));
-            }
-        }
-    </script>
 
     <script src="main.js"></script>
 

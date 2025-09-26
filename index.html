@@ -20,11 +20,6 @@
                 <li><a href="stereotypos.html">STEREOTYPOS</a></li>
                 <li><a href="gnosis.html">GNOSIS</a></li>
                 <li><a href="personalizados.html">EVENTOS PRIVADOS</a></li>
-                <li class="translate-buttons">
-                    <a href="#" onclick="doGTranslate('es|es')">🇪🇦</a>
-                    <a href="#" onclick="doGTranslate('es|en')">🇺🇸</a>
-                </li>
-
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -114,50 +109,6 @@
         </div>
     </section>
 
-    <!-- SECCION PROXIMOS EVENTOS -->
-
-    <section class="upcoming-events">
-        <div class="container">
-            <h2 class="section-title">PRÓXIMOS EVENTOS</h2>
-            <div class="events-grid" id="events-container">
-                <!-- Las cards se generan aquí con JS -->
-            </div>
-        </div>
-    </section>
-
-    <script>
-        fetch('/data/cards/events.json')
-            .then(res => res.json())
-            .then(events => {
-                const container = document.getElementById('events-container');
-                events.forEach(event => {
-                    container.innerHTML += `
-        <div class="event-card">
-          <div style="position: relative;">
-            <img src="${event.image}" alt="${event.title}" class="event-image">
-            <div class="event-date-badge">
-              ${event.badgeDay}<br>${event.badgeMonth}
-            </div>
-          </div>
-          <div class="event-content">
-            <h3 class="event-title">${event.title}</h3>
-            <div class="event-details">
-              <div class="event-detail">
-                <div class="event-icon">🕐</div>
-                <span>${event.date}</span>
-              </div>
-              <div class="event-detail">
-                <div class="event-icon">📍</div>
-                <span>${event.location}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-                });
-            });
-    </script>
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -166,41 +117,7 @@
         </div>
     </footer>
 
-    <!-- Lightbox -->
-    <div class="lightbox">
-        <span class="close">&times;</span>
-        <div class="lightbox-content">
-            <img src="" alt="">
-        </div>
-    </div>
-
     <script src="main.js"></script>
-
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'es',
-                includedLanguages: 'es,en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-    </script>
-
-    <!-- Función para activar traducción -->
-    <script type="text/javascript">
-        function doGTranslate(lang_pair) {
-            if (lang_pair.value) lang_pair = lang_pair.value;
-            var lang = lang_pair.split('|')[1];
-            var select = document.querySelector('select.goog-te-combo');
-            if (select && select.children.length > 0) {
-                select.value = lang;
-                select.dispatchEvent(new Event('change'));
-            }
-        }
-    </script>
 
 </body>
 
